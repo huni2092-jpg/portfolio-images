@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shin Sung Hoon | Samsung Global Marketing Art Director Portfolio</title>
+  <meta name="description" content="Shin Sung Hoon Art Director Portfolio for Samsung Global Marketing Office. Brand Campaign, AI Visual Workflow, Production QC." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --samsung-blue: #1428A0;
+      --samsung-blue-light: #3157ff;
+      --black: #050505;
+      --white: #ffffff;
+      --bg: #f7f8fb;
+      --text: #111217;
+      --muted: #6b7280;
+      --line: rgba(17, 18, 23, 0.1);
+      --card: #ffffff;
+      --soft-blue: #eef2ff;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #050505;
+      --text: #f5f5f7;
+      --muted: #9ca3af;
+      --line: rgba(255, 255, 255, 0.12);
+      --card: #101014;
+      --soft-blue: rgba(49, 87, 255, 0.12);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.35s ease, color 0.35s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--samsung-blue), var(--samsung-blue-light));
+      z-index: 9999;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 18px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(247, 248, 251, 0.74);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      transition: transform 0.35s ease, background 0.35s ease;
+    }
+
+    [data-theme="dark"] .site-header {
+      background: rgba(5, 5, 5, 0.7);
+    }
+
+    .brand-lockup {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-lockup strong {
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .brand-lockup span {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .desktop-nav a {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      transition: color 0.25s ease;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--text);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .theme-btn,
+    .menu-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .theme-btn:hover,
+    .menu-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(20, 40, 160, 0.35);
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 76px;
+      left: 5vw;
+      right: 5vw;
+      z-index: 999;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .mobile-nav.is-open {
+      display: grid;
+      gap: 14px;
+    }
+
+    .mobile-nav a {
+      font-weight: 800;
+      padding: 12px 10px;
+      border-radius: 14px;
+    }
+
+    .mobile-nav a:hover {
+      background: var(--soft-blue);
+    }
+
+    .section {
+      padding: 112px 5vw;
+    }
+
+    .section-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--samsung-blue-light);
+      text-transform: uppercase;
+    }
+
+    .section-kicker::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+    }
+
+    .section-title {
+      max-width: 1040px;
+      font-size: clamp(34px, 5vw, 72px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      word-break: keep-all;
+    }
+
+    .section-desc {
+      max-width: 920px;
+      margin-top: 28px;
+      font-size: clamp(16px, 1.5vw, 20px);
+      line-height: 1.72;
+      letter-spacing: -0.012em;
+      color: var(--muted);
+      word-break: keep-all;
+    }
+
+    .ai-section-title {
+      max-width: 1280px;
+    }
+
+    .ai-section-desc {
+      max-width: 1180px;
+    }
+
+    .pc-break {
+      display: inline;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 128px 5vw 56px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 72% 18%, rgba(49, 87, 255, 0.24), transparent 30%),
+        radial-gradient(circle at 12% 80%, rgba(20, 40, 160, 0.22), transparent 32%),
+        linear-gradient(145deg, #ffffff 0%, #f7f8fb 44%, #ecf0ff 100%);
+    }
+
+    [data-theme="dark"] .hero {
+      background:
+        radial-gradient(circle at 72% 18%, rgba(49, 87, 255, 0.28), transparent 30%),
+        radial-gradient(circle at 12% 80%, rgba(20, 40, 160, 0.34), transparent 32%),
+        linear-gradient(145deg, #050505 0%, #080812 50%, #000000 100%);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(20, 40, 160, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 40, 160, 0.08) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(circle at center, black, transparent 72%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 13px;
+      border: 1px solid rgba(20, 40, 160, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.6);
+      color: var(--samsung-blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(12px);
+    }
+
+    [data-theme="dark"] .hero-badge {
+      background: rgba(255, 255, 255, 0.08);
+      color: #8da2ff;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--samsung-blue);
+      box-shadow: 0 0 0 6px rgba(20, 40, 160, 0.12);
+    }
+
+    .hero-title {
+      margin-top: 26px;
+      font-size: clamp(54px, 8.8vw, 132px);
+      line-height: 0.86;
+      letter-spacing: -0.08em;
+      font-weight: 900;
+    }
+
+    .hero-title span {
+      color: var(--samsung-blue);
+    }
+
+    [data-theme="dark"] .hero-title span {
+      color: #8da2ff;
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin-top: 26px;
+      font-size: clamp(18px, 1.7vw, 24px);
+      font-weight: 600;
+      word-break: keep-all;
+      color: rgba(17, 18, 23, 0.76);
+    }
+
+    [data-theme="dark"] .hero-copy {
+      color: rgba(245, 245, 247, 0.75);
+    }
+
+    .hero-copy strong {
+      color: var(--text);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.24s ease, border-color 0.24s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--samsung-blue);
+      box-shadow: 0 16px 36px rgba(20, 40, 160, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: #0d1c73;
+      box-shadow: 0 22px 42px rgba(20, 40, 160, 0.36);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.72);
+      border-color: var(--line);
+    }
+
+    [data-theme="dark"] .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 48px;
+    }
+
+    .meta-card {
+      min-height: 110px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.58);
+      backdrop-filter: blur(16px);
+    }
+
+    [data-theme="dark"] .meta-card {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .meta-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 24px;
+      letter-spacing: -0.05em;
+    }
+
+    .meta-card span {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      word-break: keep-all;
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: 22px;
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(20, 40, 160, 0.12);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(24px);
+      overflow: hidden;
+    }
+
+    [data-theme="dark"] .hero-panel {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .blue-to-blue-card {
+      position: relative;
+      min-height: 560px;
+      border-radius: 26px;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.35), transparent 18%),
+        radial-gradient(circle at 75% 72%, rgba(255,255,255,0.22), transparent 26%),
+        linear-gradient(145deg, #08114c 0%, #1428A0 48%, #5271ff 100%);
+    }
+
+    .blue-to-blue-card::before {
+      content: '';
+      position: absolute;
+      inset: auto -20% -28% -20%;
+      height: 52%;
+      background: rgba(255,255,255,0.13);
+      border-radius: 50% 50% 0 0;
+      transform: rotate(-4deg);
+    }
+
+    .blue-to-blue-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px);
+      background-size: 42px 42px;
+      opacity: 0.28;
+      mask-image: linear-gradient(to bottom, black, transparent 86%);
+    }
+
+    .blue-card-top,
+    .blue-card-bottom {
+      position: relative;
+      z-index: 2;
+    }
+
+    .blue-card-top p {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      opacity: 0.78;
+      margin-bottom: 18px;
+    }
+
+    .logo-line {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .logo-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 13px;
+    }
+
+    .arrow-icon {
+      font-size: 20px;
+      opacity: 0.8;
+    }
+
+    .blue-card-title {
+      margin-top: auto;
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 0.88;
+      letter-spacing: -0.08em;
+      font-weight: 900;
+    }
+
+    .blue-card-caption {
+      margin-top: 20px;
+      max-width: 430px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+      word-break: keep-all;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+      margin-top: 46px;
+    }
+
+    .profile-card,
+    .quote-card {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card h3,
+    .quote-card h3 {
+      margin-bottom: 18px;
+      font-size: 16px;
+      color: var(--samsung-blue-light);
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+    }
+
+    .profile-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .profile-list li {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    .profile-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .profile-list b {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .quote-card blockquote {
+      font-size: clamp(22px, 2.5vw, 36px);
+      line-height: 1.28;
+      letter-spacing: -0.032em;
+      font-weight: 900;
+      word-break: keep-all;
+    }
+
+    .quote-card p {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 16px;
+      word-break: keep-all;
+    }
+
+    .works-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-top: 46px;
+      margin-bottom: 22px;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 900;
+      transition: all 0.24s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.is-active {
+      color: white;
+      background: var(--samsung-blue);
+      border-color: var(--samsung-blue);
+    }
+
+    .search-box {
+      width: min(310px, 100%);
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 0 16px;
+      background: var(--card);
+      color: var(--text);
+      outline: none;
+      font-size: 14px;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .work-card {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      overflow: hidden;
+      background: var(--card);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.06);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.28s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .work-card.is-hidden {
+      display: none;
+    }
+
+    .work-thumb {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background: #dfe5ff;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .work-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .work-card:hover .work-thumb img {
+      transform: scale(1.04);
+    }
+
+    .work-tags {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      z-index: 2;
+    }
+
+    .tag {
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.86);
+      color: #111217;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(12px);
+    }
+
+    .work-info {
+      padding: 20px;
+    }
+
+    .work-info h3 {
+      font-size: 20px;
+      line-height: 1.28;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+      word-break: keep-all;
+    }
+
+    .work-info p {
+      min-height: 68px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.62;
+      letter-spacing: -0.01em;
+      word-break: keep-all;
+    }
+
+    .work-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .mini-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: var(--soft-blue);
+      color: var(--samsung-blue);
+      font-size: 12px;
+      font-weight: 900;
+      transition: transform 0.22s ease, background 0.22s ease;
+    }
+
+    [data-theme="dark"] .mini-link {
+      color: #a7b6ff;
+    }
+
+    .mini-link:hover {
+      transform: translateY(-2px);
+      background: rgba(49, 87, 255, 0.18);
+    }
+
+    button.mini-link {
+      border: 0;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .kv-link {
+      background: var(--soft-blue);
+      color: var(--samsung-blue);
+    }
+
+    [data-theme="dark"] .kv-link {
+      color: #a7b6ff;
+    }
+
+    .kv-link:hover {
+      background: rgba(49, 87, 255, 0.18);
+    }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      margin-top: 46px;
+    }
+
+    .workflow-step {
+      position: relative;
+      min-height: 250px;
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.05);
+      display: grid;
+      grid-template-rows: 44px 76px auto;
+      row-gap: 18px;
+      align-content: start;
+    }
+
+    .workflow-step::before {
+      content: attr(data-step);
+      position: absolute;
+      right: 18px;
+      bottom: -8px;
+      font-size: 72px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      color: rgba(20, 40, 160, 0.08);
+    }
+
+    .workflow-step h3 {
+      position: relative;
+      margin-top: 0;
+      font-size: 18px;
+      line-height: 1.28;
+      letter-spacing: -0.025em;
+      word-break: keep-all;
+      align-self: start;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .workflow-step p {
+      position: relative;
+      margin-top: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      word-break: keep-all;
+      align-self: start;
+    }
+
+    .step-icon {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--samsung-blue);
+      font-weight: 900;
+    }
+
+    .qc-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+      margin-top: 46px;
+    }
+
+    .qc-board {
+      padding: 34px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .qc-board h3 {
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      word-break: keep-all;
+    }
+
+    .qc-board p {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 16px;
+      word-break: keep-all;
+    }
+
+    .qc-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .qc-item {
+      display: flex;
+      gap: 14px;
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .check {
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--samsung-blue);
+      color: white;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .qc-item strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+
+    .qc-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      word-break: keep-all;
+    }
+
+    .contact-section {
+      padding-bottom: 120px;
+    }
+
+    .contact-card {
+      position: relative;
+      padding: clamp(34px, 6vw, 72px);
+      border-radius: 36px;
+      color: white;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.22), transparent 20%),
+        linear-gradient(135deg, #07114a, #1428A0 55%, #4e6cff);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
+      background-size: 54px 54px;
+      opacity: 0.3;
+    }
+
+    .contact-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: end;
+    }
+
+    .contact-card h2 {
+      font-size: clamp(44px, 6.6vw, 92px);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+    }
+
+    .contact-card p {
+      margin-top: 18px;
+      max-width: 650px;
+      color: rgba(255,255,255,0.78);
+      font-size: 17px;
+      word-break: keep-all;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .contact-actions .btn-secondary {
+      color: white;
+      background: rgba(255,255,255,0.13);
+      border-color: rgba(255,255,255,0.24);
+    }
+
+    .contact-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99998;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.58);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .contact-modal.is-open {
+      display: flex;
+    }
+
+    .contact-modal-card {
+      position: relative;
+      width: min(420px, 100%);
+      padding: 34px;
+      border-radius: 28px;
+      background: var(--card);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+
+    .contact-modal-card h3 {
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .contact-modal-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-modal-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--soft-blue);
+      color: var(--samsung-blue);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+
+    [data-theme="dark"] .contact-modal-list a {
+      color: #a7b6ff;
+    }
+
+    .contact-modal-list span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .footer {
+      padding: 28px 5vw 54px;
+      color: var(--muted);
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(18px);
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 96vw;
+      max-height: 90vh;
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 22px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-inner,
+      .profile-grid,
+      .qc-wrap,
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        order: -1;
+      }
+
+      .blue-to-blue-card {
+        min-height: 420px;
+      }
+
+      .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .workflow-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .contact-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section-title {
+        line-height: 1.14;
+        letter-spacing: -0.038em;
+      }
+
+      .section-desc {
+        margin-top: 20px;
+        line-height: 1.65;
+        letter-spacing: -0.01em;
+      }
+
+      .pc-break {
+        display: none;
+      }
+
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-btn {
+        display: grid;
+      }
+
+      .section {
+        padding: 84px 5vw;
+      }
+
+      .hero {
+        padding-top: 112px;
+      }
+
+      .hero-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .works-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .search-box {
+        width: 100%;
+      }
+
+      .works-grid,
+      .workflow-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-list li {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="progressBar"></div>
+
+  <header class="site-header">
+    <a class="brand-lockup" href="#top" aria-label="Go to top">
+      <strong>SHIN SUNG HOON</strong>
+      <span>ART DIRECTOR × AI VISUAL WORKFLOW</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Desktop Navigation">
+      <a href="#profile">Profile</a>
+      <a href="#works">Selected Works</a>
+      <a href="#ai-workflow">AI Workflow</a>
+      <a href="#qc">Production QC</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">🌙</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <a href="#profile">Profile</a>
+    <a href="#works">Selected Works</a>
+    <a href="#ai-workflow">AI Workflow</a>
+    <a href="#qc">Production QC</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy-area reveal">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Samsung Global Marketing Office / Art Director
+          </div>
+
+          <h1 class="hero-title">BLUE<br><span>TO BLUE</span></h1>
+
+          <p class="hero-copy">
+            애드쿠아의 푸른 물결을 타고, 삼성전자의 푸른 바다로.<br>
+            <strong>브랜드 캠페인 전략부터 AI 기반 비주얼 제작, Production QC까지 연결하는 Art Director.</strong>
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#works">대표작 보기</a>
+            <a class="btn btn-secondary" href="#ai-workflow">AI Workflow 보기</a>
+            <a class="btn btn-secondary" href="./ShinSungHoon_Portfolio_Samsung_AD_2026.pdf" download="ShinSungHoon_Portfolio_Samsung_AD_2026.pdf">PDF 다운로드</a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-card">
+              <strong>AD</strong>
+              <span>브랜드 캠페인 컨셉 및 비주얼 디렉션</span>
+            </div>
+            <div class="meta-card">
+              <strong>AI</strong>
+              <span>이미지·영상 AI 기반 콘셉트 시각화</span>
+            </div>
+            <div class="meta-card">
+              <strong>QC</strong>
+              <span>브랜드 가이드 기반 제작물 품질 검수</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal">
+          <div class="blue-to-blue-card">
+            <div class="blue-card-top">
+              <p>&gt; Portfolio customized for Samsung Electronics</p>
+              <div class="logo-line">
+                <span class="logo-pill">AdQUA</span>
+                <span class="arrow-icon">→</span>
+                <span class="logo-pill">Samsung</span>
+              </div>
+            </div>
+
+            <div class="blue-card-bottom">
+              <h2 class="blue-card-title">Brand<br>Visual<br>System</h2>
+              <p class="blue-card-caption">
+                브랜드의 방향을 세우고, AI로 가능성을 확장하며, 최종 결과물의 완성도까지 다듬는 포트폴리오.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="profile">
+      <div class="section-inner">
+        <div class="section-kicker reveal">Profile</div>
+        <h2 class="section-title reveal">브랜드를 읽고, 비주얼로 설득하고, 완성도로 증명합니다.</h2>
+        <p class="section-desc reveal">
+          광고 캠페인 중심의 아트디렉션 경험을 바탕으로 브랜드 아이덴티티, 디지털 콘텐츠, AI 비주얼 워크플로우, 영상·이미지 제작 QC까지 연결한 포트폴리오입니다.
+        </p>
+
+        <div class="profile-grid">
+          <article class="profile-card reveal">
+            <h3>Core Fit</h3>
+            <ul class="profile-list">
+              <li><b>Position</b><span>Art Director / Global Marketing Visual Communication</span></li>
+              <li><b>Strength</b><span>브랜드 캠페인 컨셉 개발, 비주얼 톤앤매너 설계, 영상·디지털 콘텐츠 제작 경험</span></li>
+              <li><b>AI Skill</b><span>Midjourney, Hixfield, Veo, Kling, Photoshop AI 등 AI 기반 이미지·영상 시각화</span></li>
+              <li><b>Production</b><span>브랜드 가이드 준수, 산출물 품질 검수, 매체별 베리에이션 관리</span></li>
+            </ul>
+          </article>
+
+          <article class="quote-card reveal">
+            <h3>Positioning Statement</h3>
+            <blockquote>
+              AI를 다루는 디자이너를 넘어,<br>
+              AI의 방향을 설계하는<br>
+              Art Director.
+            </blockquote>
+            <p>
+              AI는 수많은 가능성을 빠르게 펼쳐주는 도구입니다. 저는 그 가능성 속에서 브랜드에 맞는 방향을 고르고, 최종 결과물의 완성도까지 정리하는 아트디렉터입니다.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="works">
+      <div class="section-inner">
+        <div class="section-kicker reveal">Selected Works</div>
+        <h2 class="section-title reveal">
+          저의 작업물을<br>
+          소개해 드립니다.
+        </h2>
+        <p class="section-desc reveal">
+          기존 포트폴리오의 섹션 흐름은 유지하되, 브랜드 컨셉, 비주얼 디렉션, 영상 캠페인, AI 기반 제작 역량이 드러나는 작업을 중심으로 재배치했습니다.
+        </p>
+
+        <div class="works-toolbar reveal">
+          <div class="filter-group" aria-label="Work filters">
+            <button class="filter-btn is-active" type="button" data-filter="all">All</button>
+            <button class="filter-btn" type="button" data-filter="ai">AI</button>
+            <button class="filter-btn" type="button" data-filter="lifestyle">Life Style</button>
+            <button class="filter-btn" type="button" data-filter="fnb">F&B</button>
+            <button class="filter-btn" type="button" data-filter="beauty">Beauty</button>
+            <button class="filter-btn" type="button" data-filter="etc">Etc</button>
+          </div>
+          <input class="search-box" id="workSearch" type="search" placeholder="작업명 검색" />
+        </div>
+
+        <div class="works-grid" id="worksGrid">
+          <article class="work-card reveal" data-category="lifestyle ai" data-title="daedamo campaign 대다모 캠페인 영상 1 2 ai">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/6.jpg">
+              <div class="work-tags"><span class="tag">Life Style</span><span class="tag">AI</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/6.jpg" alt="DAEDAMO campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>DAEDAMO Campaign</h3>
+              <p>대다모가 다루는 문제의식을 캠페인 메시지와 영상 콘텐츠로 확장한 라이프스타일 캠페인.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=ry7HVj5LCIc" target="_blank" rel="noopener noreferrer">영상 1</a>
+                <a class="mini-link" href="https://www.youtube.com/watch?v=X8Br4d-IzSk" target="_blank" rel="noopener noreferrer">영상 2</a>
+                <button class="mini-link kv-link" type="button" data-kv="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/7.jpg">AI Contents</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="lifestyle ai" data-title="hairism 헤어리즘 daedamo ai">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/8.jpg">
+              <div class="work-tags"><span class="tag">Life Style</span><span class="tag">AI</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/8.jpg" alt="HAIRism campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>HAIRism</h3>
+              <p>제품 아이디어와 상황 인사이트, 캠페인 메시지를 하나의 브랜드 경험으로 연결한 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=GDVkB8L-d3A" target="_blank" rel="noopener noreferrer">영상 보기</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="lifestyle ai" data-title="blue abc day 블루 abc 데이 ai">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/9.jpg">
+              <div class="work-tags"><span class="tag">Life Style</span><span class="tag">AI</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/9.jpg" alt="Blue ABC Day campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>Blue ABC Day</h3>
+              <p>브랜드 컬러와 캠페인 무드를 중심으로 영상 톤앤매너를 구축한 디지털 캠페인.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=hvTQfvWBehY&si=exzTeKqGgaFrlJoL" target="_blank" rel="noopener noreferrer">영상 보기</a>
+                <button class="mini-link kv-link" type="button" data-kv="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/10.jpg">KV 보기</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="lifestyle" data-title="black abc day 블랙 abc 데이">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/11.jpg">
+              <div class="work-tags"><span class="tag">Life Style</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/11.jpg" alt="Black ABC Day campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>Black ABC Day</h3>
+              <p>같은 캠페인 구조 안에서 컬러와 분위기를 달리해 브랜드 경험을 확장한 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=vfh5X2mjWWI" target="_blank" rel="noopener noreferrer">영상 보기</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="lifestyle" data-title="uplus foldable7 런칭 캠페인">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/12.jpg">
+              <div class="work-tags"><span class="tag">Life Style</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/12.jpg" alt="U+ Foldable7 launch campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>U+ Foldable7 Launch</h3>
+              <p>디바이스 런칭 캠페인에 맞춰 메시지, 영상, 디지털 접점을 설계한 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=CpGVzs3c0_s" target="_blank" rel="noopener noreferrer">영상 보기</a>
+                <button class="mini-link kv-link" type="button" data-kv="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/13.jpg">KV 보기</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="lifestyle" data-title="tmoneygo 티머니고 퍼포먼스 영상">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/14.jpg">
+              <div class="work-tags"><span class="tag">Life Style</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/14.jpg" alt="TmoneyGO performance campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>TmoneyGO Performance</h3>
+              <p>서비스 이용 맥락을 중심으로 디지털 퍼포먼스 영상의 메시지와 흐름을 구성한 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=hgRz4gRuo-A" target="_blank" rel="noopener noreferrer">영상 보기</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="fnb" data-title="subway jambon collection 써브웨이 잠봉 컬렉션">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/16.jpg">
+              <div class="work-tags"><span class="tag">F&B</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/16.jpg" alt="Subway Jambon Collection portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>Subway Jambon Collection</h3>
+              <p>신제품의 신선함과 브랜드 톤을 연결한 F&B 캠페인 비주얼 디렉션.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=2Tuys3QTjM4" target="_blank" rel="noopener noreferrer">영상 보기</a>
+                <button class="mini-link kv-link" type="button" data-kv="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/17.jpg">KV 보기</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="fnb" data-title="subway subpick campaign 써브웨이 썹픽 캠페인 1 2">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/18.jpg">
+              <div class="work-tags"><span class="tag">F&B</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/18.jpg" alt="Subway Subpick campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>Subway Subpick</h3>
+              <p>써브웨이의 선택 경험을 캠페인 아이디어로 전환해, 브랜드 접점에서 직관적으로 전달한 영상 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?time_continue=1&v=-1eeVl8ObE0&embeds_referring_euri=https%3A%2F%2Fwww.adqua.co.kr%2F&source_ve_path=Mjg2NjY" target="_blank" rel="noopener noreferrer">영상 1</a>
+                <a class="mini-link" href="https://www.youtube.com/watch?v=uGP6-ELEBOU" target="_blank" rel="noopener noreferrer">영상 2</a>
+                <button class="mini-link kv-link" type="button" data-kv="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/19.jpg">KV 보기</button>
+                <button class="mini-link kv-link" type="button" data-kv="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/20.jpg">Goods</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="fnb" data-title="subway 60th anniversary film 써브웨이 60주년 필름">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/21.jpg">
+              <div class="work-tags"><span class="tag">F&B</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/21.jpg" alt="Subway 60th anniversary film portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>Subway 60th Film</h3>
+              <p>브랜드 히스토리와 오늘의 Fresh 무드를 연결한 애니버서리 브랜드 필름.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=cgoHTpFWKDQ" target="_blank" rel="noopener noreferrer">영상 보기</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="fnb" data-title="sase campaign 사세 캠페인 영상 1 2">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/22.jpg">
+              <div class="work-tags"><span class="tag">F&B</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/22.jpg" alt="SASE campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>SASE Campaign</h3>
+              <p>제품의 맛과 사용 상황을 영상 메시지로 풀어낸 F&B 캠페인 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=0y4KND0F37w" target="_blank" rel="noopener noreferrer">영상 1</a>
+                <a class="mini-link" href="https://www.youtube.com/watch?v=ACOHpNnHLWw" target="_blank" rel="noopener noreferrer">영상 2</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="fnb" data-title="haru vegetable 하루야채 캠페인">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/23.jpg">
+              <div class="work-tags"><span class="tag">F&B</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/23.jpg" alt="Haru Vegetable campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>Haru Vegetable</h3>
+              <p>일상 속 건강 루틴을 브랜드 메시지로 전환한 F&B·헬스케어 영상 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=pQ6D-J1KxXU" target="_blank" rel="noopener noreferrer">영상 보기</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="beauty" data-title="dermafirm campaign 더마펌 캠페인 영상 1 2">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/25.jpg">
+              <div class="work-tags"><span class="tag">Beauty</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/25.jpg" alt="Dermafirm campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>Dermafirm Campaign</h3>
+              <p>제품 효능, 브랜드 감도, 모델 이미지를 균형 있게 전달한 뷰티 캠페인 영상 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=puTpPsK-WZg" target="_blank" rel="noopener noreferrer">영상 1</a>
+                <a class="mini-link" href="https://www.youtube.com/watch?v=AuxWxMIl0m4&si=F1RvCMY7R_Qom_Jy" target="_blank" rel="noopener noreferrer">영상 2</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="beauty" data-title="kahi campaign 가히 캠페인 영상 1 2 3">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/26.jpg">
+              <div class="work-tags"><span class="tag">Beauty</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/26.jpg" alt="KAHI campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>KAHI Campaign</h3>
+              <p>브랜드 이미지와 제품 사용 장면을 시리즈형 영상으로 풀어낸 뷰티 캠페인 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://tvcf.co.kr/play/bh05525-896869" target="_blank" rel="noopener noreferrer">영상 1</a>
+                <a class="mini-link" href="https://tvcf.co.kr/play/ah06567-896682" target="_blank" rel="noopener noreferrer">영상 2</a>
+                <a class="mini-link" href="https://tvcf.co.kr/play/bh02644-897733" target="_blank" rel="noopener noreferrer">영상 3</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="beauty" data-title="plant collagen campaign 플랜트콜라겐 영상 1 2">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/27.jpg">
+              <div class="work-tags"><span class="tag">Beauty</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/27.jpg" alt="Plant Collagen campaign portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>Plant Collagen</h3>
+              <p>뷰티·헬스케어 제품의 이미지와 효능 메시지를 감각적으로 정리한 영상 캠페인.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=eFkEYJvT6HM" target="_blank" rel="noopener noreferrer">영상 1</a>
+                <a class="mini-link" href="https://www.youtube.com/watch?v=GsU7NtayUew" target="_blank" rel="noopener noreferrer">영상 2</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="etc" data-title="etc tvcf 기타 tvcf shots">
+            <div class="work-thumb" data-image="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/28.jpg">
+              <div class="work-tags"><span class="tag">Etc</span></div>
+              <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/28.jpg" alt="Etc TVCF portfolio page" loading="lazy" />
+            </div>
+            <div class="work-info">
+              <h3>Etc. TVCF Works</h3>
+              <p>기타 TVCF 및 영상 작업을 한 번에 확인할 수 있는 아카이브형 작업 모음.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://star.tvcf.co.kr/IL0223162E6CD/shots" target="_blank" rel="noopener noreferrer">작업 보기</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ai-workflow">
+      <div class="section-inner">
+        <div class="section-kicker reveal">AI Workflow</div>
+        <h2 class="section-title ai-section-title reveal">
+          AI를 단순한 시안 툴이 아니라,<br class="pc-break">
+          브랜드 비주얼을 확장하는 시스템으로 활용합니다.
+        </h2>
+        <p class="section-desc ai-section-desc reveal">
+          삼성전자 글로벌마케팅실 포지션에 맞춰<br class="pc-break">
+          AI 기반 시각 콘셉트 제안부터 최종 산출물 정리까지<br class="pc-break">
+          실제 제작 흐름을 기준으로 정리했습니다.
+        </p>
+
+        <div class="workflow-grid">
+          <article class="workflow-step reveal" data-step="01">
+            <div class="step-icon">01</div>
+            <h3>Brief Understanding</h3>
+            <p>브랜드 목표, 캠페인 메시지, 타깃, 매체 조건을 먼저 해석합니다.</p>
+          </article>
+
+          <article class="workflow-step reveal" data-step="02">
+            <div class="step-icon">02</div>
+            <h3>Visual Direction</h3>
+            <p>키비주얼 톤, 컬러, 구도, 레퍼런스, 피해야 할 요소를 방향성으로 정리합니다.</p>
+          </article>
+
+          <article class="workflow-step reveal" data-step="03">
+            <div class="step-icon">03</div>
+            <h3>AI Exploration</h3>
+            <p>Midjourney, Hixfield, Veo, Kling 등으로 이미지·영상 후보를 빠르게 확장합니다.</p>
+          </article>
+
+          <article class="workflow-step reveal" data-step="04">
+            <div class="step-icon">04</div>
+            <h3>Human Art Direction</h3>
+            <p>AI 결과물 중 브랜드핏, 완성도, 메시지 전달력을 기준으로 선별하고 다듬습니다.</p>
+          </article>
+
+          <article class="workflow-step reveal" data-step="05">
+            <div class="step-icon">05</div>
+            <h3>Finalization</h3>
+            <p>Photoshop, Illustrator, 후반 작업 툴로 로고, 레이아웃, 질감, 해상도를 정리합니다.</p>
+          </article>
+
+          <article class="workflow-step reveal" data-step="06">
+            <div class="step-icon">06</div>
+            <h3>Production QC</h3>
+            <p>브랜드 가이드, 사용성, 매체별 규격, 톤앤매너를 최종 검수합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="qc">
+      <div class="section-inner">
+        <div class="section-kicker reveal">Production QC</div>
+        <h2 class="section-title reveal">좋은 시안보다 중요한 건, 끝까지 브랜드답게 완성되는 것.</h2>
+
+        <div class="qc-wrap">
+          <article class="qc-board reveal">
+            <h3>From Creative Concept<br>to Brand-Safe Output.</h3>
+            <p>
+              AI 기반 제작 환경에서는 결과물이 빠르게 늘어나는 만큼, 무엇을 선택하고 무엇을 덜어낼지 판단하는 QC 역량이 중요합니다. 저는 캠페인 목적, 브랜드 비주얼 가이드, 매체별 제작 조건을 기준으로 완성도를 관리합니다.
+            </p>
+          </article>
+
+          <div class="qc-list">
+            <div class="qc-item reveal">
+              <span class="check">✓</span>
+              <div>
+                <strong>Brand Guide Check</strong>
+                <span>로고, 컬러, 타이포그래피, 이미지 톤, 브랜드 에셋 사용 기준 검수</span>
+              </div>
+            </div>
+            <div class="qc-item reveal">
+              <span class="check">✓</span>
+              <div>
+                <strong>AI Artifact Check</strong>
+                <span>손, 얼굴, 제품 왜곡, 텍스트 오류, 비현실적 질감 등 AI 결과물 오류 확인</span>
+              </div>
+            </div>
+            <div class="qc-item reveal">
+              <span class="check">✓</span>
+              <div>
+                <strong>Channel Adaptation</strong>
+                <span>OOH, SNS, 영상, 배너 등 매체별 비율과 정보 우선순위 정리</span>
+              </div>
+            </div>
+            <div class="qc-item reveal">
+              <span class="check">✓</span>
+              <div>
+                <strong>Final Delivery</strong>
+                <span>제작사, 디자이너, 마케터가 바로 사용할 수 있는 최종 산출물 기준 관리</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-inner">
+        <div class="contact-card reveal">
+          <div class="contact-content">
+            <div>
+              <h2>Ready for<br>Samsung.</h2>
+              <p>
+                검토가 쉬운 PDF와 작업 흐름이 잘 보이는 웹 포트폴리오를 함께 준비했습니다. 필요 시 전체 작업물, AI 프롬프트 샘플, 제작 QC 체크리스트를 추가 제출할 수 있습니다.
+              </p>
+            </div>
+            <div class="contact-actions">
+              <button class="btn btn-secondary" id="contactBtn" type="button">Contact</button>
+              <a class="btn btn-secondary" href="./ShinSungHoon_Portfolio_Samsung_AD_2026.pdf" download="ShinSungHoon_Portfolio_Samsung_AD_2026.pdf">PDF Portfolio</a>
+              <a class="btn btn-secondary" href="#works">Selected Works</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>SYSTEM.EXIT(0); // © 2026 Shin Sung Hoon. Blue to Blue.</p>
+  </footer>
+
+  <div class="contact-modal" id="contactModal" aria-hidden="true">
+    <div class="contact-modal-card" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+      <button class="contact-modal-close" id="contactModalClose" type="button" aria-label="Close contact popup">×</button>
+      <h3 id="contactModalTitle">Contact</h3>
+      <div class="contact-modal-list">
+        <a href="mailto:li0224il@naver.com"><span>Email</span>li0224il@naver.com</a>
+        <a href="tel:01039492421"><span>Phone</span>010-3949-2421</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
+    <img id="lightboxImage" src="" alt="Expanded portfolio image" />
+  </div>
+
+  <script>
+    const body = document.body;
+    const progressBar = document.getElementById('progressBar');
+    const themeBtn = document.getElementById('themeBtn');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const workCards = document.querySelectorAll('.work-card');
+    const workSearch = document.getElementById('workSearch');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const contactBtn = document.getElementById('contactBtn');
+    const contactModal = document.getElementById('contactModal');
+    const contactModalClose = document.getElementById('contactModalClose');
+
+    function updateProgressBar() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+    }
+
+    window.addEventListener('scroll', updateProgressBar, { passive: true });
+    updateProgressBar();
+
+    themeBtn.addEventListener('click', () => {
+      const isDark = body.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        body.removeAttribute('data-theme');
+        themeBtn.textContent = '🌙';
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        themeBtn.textContent = '☀️';
+      }
+    });
+
+    menuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('is-open');
+    });
+
+    mobileNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => mobileNav.classList.remove('is-open'));
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+    let currentFilter = 'all';
+
+    function normalize(text) {
+      return text.toLowerCase().trim();
+    }
+
+    function filterWorks() {
+      const keyword = normalize(workSearch.value || '');
+
+      workCards.forEach((card) => {
+        const category = card.dataset.category || '';
+        const title = normalize(card.dataset.title || card.innerText || '');
+        const matchFilter = currentFilter === 'all' || category.includes(currentFilter);
+        const matchKeyword = !keyword || title.includes(keyword);
+        card.classList.toggle('is-hidden', !(matchFilter && matchKeyword));
+      });
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach((btn) => btn.classList.remove('is-active'));
+        button.classList.add('is-active');
+        currentFilter = button.dataset.filter;
+        filterWorks();
+      });
+    });
+
+    workSearch.addEventListener('input', filterWorks);
+
+    function openLightboxImage(image) {
+      if (!image) return;
+      lightboxImage.src = image;
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    document.querySelectorAll('.work-thumb').forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        openLightboxImage(thumb.dataset.image);
+      });
+    });
+
+    document.querySelectorAll('.kv-link').forEach((button) => {
+      button.addEventListener('click', () => {
+        openLightboxImage(button.dataset.kv);
+      });
+    });
+
+    function openContactModal() {
+      if (!contactModal) return;
+      contactModal.classList.add('is-open');
+      contactModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeContactModal() {
+      if (!contactModal) return;
+      contactModal.classList.remove('is-open');
+      contactModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (contactBtn) {
+      contactBtn.addEventListener('click', openContactModal);
+    }
+
+    if (contactModalClose) {
+      contactModalClose.addEventListener('click', closeContactModal);
+    }
+
+    if (contactModal) {
+      contactModal.addEventListener('click', (event) => {
+        if (event.target === contactModal) closeContactModal();
+      });
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+        closeLightbox();
+      }
+
+      if (event.key === 'Escape' && contactModal && contactModal.classList.contains('is-open')) {
+        closeContactModal();
+      }
+    });
+  </script>
+</body>
+</html>
