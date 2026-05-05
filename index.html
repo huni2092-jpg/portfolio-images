@@ -1,0 +1,2806 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shin Sung Hoon | Art Director Portfolio</title>
+  <meta name="description" content="Shin Sung Hoon Art Director Portfolio. Brand Campaign, AI Visual Workflow, Production QC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --samsung-blue: #1428A0;
+      --samsung-blue-2: #1f4cff;
+      --samsung-blue-soft: #eef3ff;
+      --samsung-blue-pale: #f5f7ff;
+      --bg: #ffffff;
+      --bg-soft: #f6f8fc;
+      --card: #ffffff;
+      --text: #111217;
+      --muted: #5f6673;
+      --muted-light: #7d8490;
+      --line: rgba(20, 40, 160, 0.13);
+      --line-soft: rgba(17, 18, 23, 0.075);
+      --black: #050505;
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --shadow-soft: 0 18px 54px rgba(20, 40, 160, 0.075);
+      --shadow-card: 0 16px 44px rgba(17, 18, 23, 0.055);
+      --font: "Inter", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "SamsungOne", "SamsungOneKorean", system-ui, sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --bg: #ffffff;
+      --bg-soft: #f6f8fc;
+      --card: #ffffff;
+      --text: #111217;
+      --muted: #5f6673;
+      --muted-light: #7d8490;
+      --line: rgba(20, 40, 160, 0.13);
+      --line-soft: rgba(17, 18, 23, 0.075);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(circle at 84% 8%, rgba(20, 40, 160, 0.11), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8faff 44%, #ffffff 100%);
+      line-height: 1.7;
+      letter-spacing: -0.012em;
+      word-break: keep-all;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input {
+      font-family: inherit;
+    }
+
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--samsung-blue), var(--samsung-blue-2));
+      z-index: 9999;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 62px;
+      z-index: 1000;
+      padding: 0 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.84);
+      border-bottom: 1px solid rgba(20, 40, 160, 0.09);
+      backdrop-filter: saturate(180%) blur(22px);
+      -webkit-backdrop-filter: saturate(180%) blur(22px);
+    }
+
+    .brand-lockup {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      letter-spacing: -0.006em;
+    }
+
+    .brand-lockup strong {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .brand-lockup strong::before {
+      content: "";
+      width: 22px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--samsung-blue);
+      display: inline-block;
+    }
+
+    .brand-lockup span {
+      padding-left: 31px;
+      font-size: 10px;
+      line-height: 1.25;
+      font-weight: 500;
+      letter-spacing: 0.025em;
+      color: var(--muted-light);
+      text-transform: uppercase;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .desktop-nav a {
+      position: relative;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -0.004em;
+      color: rgba(17, 18, 23, 0.68);
+      transition: color 0.2s ease;
+    }
+
+    .desktop-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--samsung-blue);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.2s ease;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--samsung-blue);
+    }
+
+    .desktop-nav a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .theme-btn {
+      display: none;
+    }
+
+    .menu-btn {
+      width: 38px;
+      height: 38px;
+      display: none;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--samsung-blue);
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 62px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      padding: 10px 5vw 18px;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .mobile-nav.is-open {
+      display: grid;
+    }
+
+    .mobile-nav a {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .section {
+      padding: 118px 5vw;
+    }
+
+    .section:nth-of-type(even) {
+      background:
+        radial-gradient(circle at 10% 0%, rgba(20, 40, 160, 0.055), transparent 24%),
+        var(--bg-soft);
+    }
+
+    .section-inner {
+      width: min(1160px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: auto;
+      padding-top: 150px;
+      padding-bottom: 104px;
+      background:
+        radial-gradient(circle at 76% 12%, rgba(20, 40, 160, 0.16), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.94fr 1.06fr;
+      gap: 66px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(20, 40, 160, 0.13);
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--samsung-blue);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -0.004em;
+      box-shadow: 0 10px 28px rgba(20, 40, 160, 0.06);
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--samsung-blue);
+      box-shadow: 0 0 0 5px rgba(20, 40, 160, 0.10);
+    }
+
+    .hero-title {
+      margin-top: 24px;
+      font-size: clamp(50px, 7.4vw, 98px);
+      line-height: 1;
+      letter-spacing: -0.048em;
+      font-weight: 760;
+      color: var(--text);
+    }
+
+    .hero-title span {
+      color: var(--samsung-blue);
+      font-weight: 760;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin-top: 30px;
+      font-size: clamp(19px, 1.65vw, 24px);
+      line-height: 1.58;
+      font-weight: 400;
+      letter-spacing: -0.016em;
+      color: var(--muted);
+    }
+
+    .hero-copy strong {
+      color: var(--samsung-blue);
+      font-weight: 650;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      min-height: 44px;
+      padding: 0 20px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 550;
+      letter-spacing: -0.004em;
+      border: 1px solid transparent;
+      transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--samsung-blue);
+      color: white;
+      box-shadow: 0 12px 30px rgba(20, 40, 160, 0.18);
+    }
+
+    .btn-primary:hover {
+      background: #0f2187;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--samsung-blue);
+      border-color: rgba(20, 40, 160, 0.14);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 48px;
+    }
+
+    .meta-card {
+      min-height: 118px;
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(20, 40, 160, 0.11);
+      box-shadow: 0 14px 40px rgba(20, 40, 160, 0.055);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .meta-card strong {
+      font-size: 26px;
+      line-height: 1.1;
+      font-weight: 650;
+      letter-spacing: -0.032em;
+      color: var(--samsung-blue);
+    }
+
+    .meta-card span {
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: -0.006em;
+    }
+
+    .hero-panel {
+      padding: 0;
+      border-radius: 34px;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      overflow: visible;
+      backdrop-filter: none;
+    }
+
+    .blue-to-blue-card {
+      position: relative;
+      min-height: 592px;
+      border-radius: 34px;
+      padding: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,0.24), transparent 27%),
+        linear-gradient(135deg, #09145a 0%, #1428A0 48%, #3157ff 100%);
+      box-shadow: 0 30px 76px rgba(20, 40, 160, 0.22);
+    }
+
+    .blue-to-blue-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -18% -26% -18%;
+      height: 44%;
+      border-radius: 50% 50% 0 0;
+      background: rgba(255, 255, 255, 0.12);
+      transform: rotate(-3deg);
+    }
+
+    .blue-to-blue-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 46px 46px;
+      opacity: 0.24;
+      mask-image: linear-gradient(to bottom, black 0%, transparent 86%);
+    }
+
+    .blue-card-top,
+    .blue-card-bottom {
+      position: relative;
+      z-index: 2;
+    }
+
+    .blue-card-top p,
+    .transition-eyebrow {
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 400;
+      letter-spacing: 0;
+      opacity: 0.72;
+      margin-bottom: 20px;
+    }
+
+    .career-flow {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .company-logo-card {
+      min-height: 118px;
+      padding: 24px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(12px);
+    }
+
+    .company-logo-card img {
+      max-width: 158px;
+      max-height: 42px;
+      object-fit: contain;
+    }
+
+    .company-logo-card span {
+      display: none;
+    }
+
+    .samsung-card {
+      background: rgba(255,255,255,0.17);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+    .flow-arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 400;
+      box-shadow: none;
+    }
+
+    .blue-card-title {
+      margin-top: auto;
+      max-width: 520px;
+      font-size: clamp(42px, 5.3vw, 68px);
+      line-height: 1;
+      letter-spacing: -0.046em;
+      font-weight: 720;
+    }
+
+    .blue-card-caption {
+      margin-top: 22px;
+      max-width: 500px;
+      font-size: 17px;
+      line-height: 1.62;
+      font-weight: 400;
+      letter-spacing: -0.014em;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .section-kicker {
+      margin-bottom: 14px;
+      font-size: 14px;
+      line-height: 1.45;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--samsung-blue);
+      text-transform: none;
+    }
+
+    .section-title {
+      max-width: 940px;
+      font-size: clamp(36px, 4.5vw, 62px);
+      line-height: 1.14;
+      letter-spacing: -0.044em;
+      font-weight: 720;
+    }
+
+    .section-desc {
+      max-width: 820px;
+      margin-top: 24px;
+      font-size: clamp(17px, 1.55vw, 21px);
+      line-height: 1.72;
+      letter-spacing: -0.012em;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 18px;
+      margin-top: 56px;
+    }
+
+    .profile-card,
+    .quote-card {
+      min-height: 408px;
+      padding: 34px;
+      border: 1px solid rgba(20, 40, 160, 0.10);
+      border-radius: var(--radius-xl);
+      background: var(--card);
+      box-shadow: var(--shadow-card);
+    }
+
+    .quote-card {
+      background:
+        radial-gradient(circle at 86% 18%, rgba(255,255,255,.16), transparent 28%),
+        linear-gradient(135deg, #09145a 0%, #1428A0 100%);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .quote-card::after {
+      content: "";
+      position: absolute;
+      right: -180px;
+      bottom: -220px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.14), transparent 66%);
+    }
+
+    .profile-card h3,
+    .quote-card h3 {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 600;
+      letter-spacing: 0.006em;
+      color: var(--samsung-blue);
+      text-transform: none;
+    }
+
+    .quote-card h3 {
+      color: rgba(255,255,255,.72);
+    }
+
+    .profile-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .profile-list li {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 18px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: 16px;
+      line-height: 1.62;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .profile-list li:first-child {
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .profile-list li:last-child {
+      border-bottom: 1px solid var(--line-soft);
+      padding-bottom: 20px;
+    }
+
+    .profile-list b {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .quote-card blockquote {
+      position: relative;
+      z-index: 1;
+      margin-top: 70px;
+      font-size: clamp(30px, 3.6vw, 48px);
+      line-height: 1.16;
+      letter-spacing: -0.043em;
+      font-weight: 720;
+    }
+
+    .quote-card p {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      margin-top: 24px;
+      color: rgba(255,255,255,.78);
+      font-size: 17px;
+      line-height: 1.68;
+      font-weight: 400;
+      letter-spacing: -0.012em;
+    }
+
+    .works-toolbar {
+      position: sticky;
+      top: 74px;
+      z-index: 20;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 48px;
+      margin-bottom: 24px;
+      padding: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(20, 40, 160, 0.11);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 12px 36px rgba(20, 40, 160, 0.06);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .filter-btn {
+      min-height: 34px;
+      padding: 0 14px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: 0;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.is-active {
+      color: #fff;
+      background: var(--samsung-blue);
+      border-color: transparent;
+    }
+
+    .search-box {
+      width: min(260px, 30vw);
+      height: 34px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 0;
+      background: rgba(20, 40, 160, 0.07);
+      color: var(--text);
+      outline: none;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .work-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid rgba(20, 40, 160, 0.10);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .work-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--samsung-blue), var(--samsung-blue-2));
+      opacity: 0;
+      transition: opacity 0.28s ease;
+      z-index: 2;
+    }
+
+    .work-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .work-card:hover::before {
+      opacity: 1;
+    }
+
+    .work-thumb {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #e8eefa;
+    }
+
+    .work-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+
+    .work-card:hover .work-thumb img {
+      transform: scale(1.028);
+    }
+
+    .work-info {
+      padding: 26px 28px 30px;
+    }
+
+    .work-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      min-height: 24px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: var(--samsung-blue-soft);
+      color: var(--samsung-blue);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .work-info h3 {
+      font-size: clamp(23px, 2vw, 29px);
+      line-height: 1.2;
+      letter-spacing: -0.032em;
+      font-weight: 650;
+      margin-bottom: 12px;
+    }
+
+    .work-info p {
+      min-height: 68px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.72;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+    }
+
+    .work-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .mini-link,
+    button.mini-link {
+      min-height: auto;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--samsung-blue);
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 550;
+      letter-spacing: -0.004em;
+      transition: opacity 0.2s ease;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .mini-link::after {
+      content: " ›";
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .mini-link:hover {
+      transform: none;
+      opacity: 0.72;
+      background: transparent;
+    }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 56px;
+      counter-reset: step;
+    }
+
+    .workflow-step {
+      position: relative;
+      min-height: 302px;
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(20, 40, 160, 0.10);
+      background: #ffffff;
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .workflow-step::before {
+      counter-increment: step;
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      right: 24px;
+      top: 22px;
+      font-size: 56px;
+      line-height: .9;
+      font-weight: 620;
+      letter-spacing: -0.045em;
+      color: rgba(20, 40, 160, 0.13);
+    }
+
+    .workflow-step::after {
+      content: "";
+      position: absolute;
+      left: 28px;
+      top: 28px;
+      width: 34px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--samsung-blue);
+      opacity: 0.86;
+    }
+
+    .workflow-step h3 {
+      margin-top: 0;
+      font-size: 23px;
+      line-height: 1.22;
+      letter-spacing: -0.032em;
+      font-weight: 650;
+    }
+
+    .workflow-step p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.72;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+    }
+
+    .qc-board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      margin-top: 56px;
+    }
+
+    .qc-board > div:first-child {
+      min-height: 560px;
+      padding: 46px;
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,.17), transparent 28%),
+        linear-gradient(135deg, #09145a 0%, #1428A0 100%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 26px 70px rgba(20, 40, 160, 0.18);
+    }
+
+    .qc-board > div:first-child::after {
+      content: "";
+      position: absolute;
+      right: -160px;
+      top: -170px;
+      width: 460px;
+      height: 460px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.15), transparent 68%);
+    }
+
+    .qc-board h3 {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(36px, 4.2vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -0.044em;
+      font-weight: 720;
+    }
+
+    .qc-board p {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      margin-top: 0;
+      color: rgba(255,255,255,.78);
+      font-size: 17px;
+      line-height: 1.68;
+      letter-spacing: -0.012em;
+      font-weight: 400;
+    }
+
+    .qc-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .qc-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      padding: 24px;
+      border-radius: 24px;
+      background: #ffffff;
+      border: 1px solid rgba(20, 40, 160, 0.10);
+      box-shadow: var(--shadow-card);
+    }
+
+    .qc-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--samsung-blue-soft);
+      color: var(--samsung-blue);
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .qc-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.22;
+      font-weight: 650;
+      letter-spacing: -0.032em;
+    }
+
+    .qc-item span {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.68;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+    }
+
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      border-radius: 36px;
+      padding: 56px;
+      background:
+        radial-gradient(circle at 82% 16%, rgba(255,255,255,.20), transparent 28%),
+        linear-gradient(135deg, #09145a 0%, #1428A0 54%, #3157ff 100%);
+      color: white;
+      box-shadow: 0 30px 76px rgba(20, 40, 160, 0.22);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .contact-card::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -340px;
+      width: 720px;
+      height: 720px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.15), transparent 66%);
+    }
+
+    .contact-card h2 {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(42px, 5.8vw, 78px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      font-weight: 720;
+    }
+
+    .contact-card p {
+      position: relative;
+      z-index: 1;
+      margin: 28px auto 0;
+      max-width: 720px;
+      font-size: clamp(17px, 1.55vw, 21px);
+      line-height: 1.65;
+      letter-spacing: -0.012em;
+      font-weight: 400;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .contact-actions {
+      position: relative;
+      z-index: 1;
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact-actions .btn {
+      background: white;
+      color: var(--samsung-blue);
+    }
+
+    .footer {
+      padding: 32px 5vw 44px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.72s cubic-bezier(.2,.8,.2,1), transform 0.72s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(18px);
+    }
+
+    .modal.is-open {
+      display: grid;
+    }
+
+    .modal-card {
+      width: min(1080px, 100%);
+      max-height: 90vh;
+      border-radius: 26px;
+      background: var(--card);
+      color: var(--text);
+      overflow: hidden;
+      box-shadow: 0 34px 90px rgba(0,0,0,0.35);
+    }
+
+    .modal-head {
+      height: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px 0 24px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .modal-head strong {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .modal-close {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 0;
+      background: var(--samsung-blue-soft);
+      color: var(--samsung-blue);
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .modal-body {
+      padding: 18px;
+      overflow: auto;
+      max-height: calc(90vh - 56px);
+    }
+
+    .modal-body img {
+      width: 100%;
+      border-radius: 16px;
+    }
+
+    @media (max-width: 1060px) {
+      .hero-grid,
+      .profile-grid,
+      .qc-board {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid,
+      .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .blue-to-blue-card,
+      .qc-board > div:first-child {
+        min-height: 520px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .site-header {
+        height: 58px;
+      }
+
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-btn {
+        display: grid;
+      }
+
+      .mobile-nav {
+        top: 58px;
+      }
+
+      .hero {
+        padding-top: 112px;
+      }
+
+      .hero-title {
+        font-size: clamp(44px, 13vw, 70px);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-copy {
+        font-size: 18px;
+        line-height: 1.62;
+      }
+
+      .section {
+        padding: 84px 5vw;
+      }
+
+      .section-title {
+        font-size: clamp(32px, 8.5vw, 48px);
+        line-height: 1.18;
+      }
+
+      .section-desc {
+        font-size: 17px;
+      }
+
+      .works-toolbar {
+        position: relative;
+        top: auto;
+        align-items: stretch;
+        flex-direction: column;
+        border-radius: 24px;
+      }
+
+      .search-box {
+        width: 100%;
+      }
+
+      .contact-card {
+        padding: 38px 26px;
+        border-radius: 30px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .work-grid,
+      .workflow-grid,
+      .hero-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .career-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-arrow {
+        margin: 0 auto;
+        transform: rotate(90deg);
+      }
+
+      .blue-to-blue-card {
+        min-height: 500px;
+        padding: 28px;
+        border-radius: 28px;
+      }
+
+      .profile-card,
+      .quote-card {
+        min-height: auto;
+        padding: 28px;
+        border-radius: 26px;
+      }
+
+      .quote-card blockquote {
+        margin-top: 44px;
+      }
+
+      .profile-list li {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .qc-board > div:first-child {
+        min-height: 460px;
+        padding: 30px;
+        border-radius: 28px;
+      }
+
+      .qc-item {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    /* =========================================================
+       HERO HEIGHT FIX
+       왼쪽 텍스트 덩어리와 오른쪽 블루 카드 높이를 정확히 맞춤
+       ========================================================= */
+
+    .hero-grid {
+      align-items: stretch;
+    }
+
+    .hero-copy-wrap {
+      min-height: 592px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-panel {
+      height: 100%;
+      display: flex;
+    }
+
+    .blue-to-blue-card {
+      height: 100%;
+      width: 100%;
+    }
+
+    .hero-meta {
+      margin-top: auto;
+      padding-top: 48px;
+    }
+
+    @media (max-width: 1060px) {
+      .hero-copy-wrap {
+        min-height: auto;
+      }
+
+      .hero-meta {
+        margin-top: 44px;
+        padding-top: 0;
+      }
+
+      .hero-panel {
+        height: auto;
+      }
+
+      .blue-to-blue-card {
+        height: auto;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-meta {
+        margin-top: 38px;
+      }
+    }
+
+  
+    /* =========================================================
+       WORK LINK BUTTON RESTORE
+       영상/KV 링크를 텍스트 링크가 아니라 버튼 쉐입으로 복구
+       ========================================================= */
+
+    .work-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .work-links .mini-link,
+    .work-links button.mini-link {
+      min-height: 36px;
+      padding: 0 15px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: var(--samsung-blue-soft);
+      border: 1px solid rgba(20, 40, 160, 0.15);
+      color: var(--samsung-blue);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -0.004em;
+      cursor: pointer;
+      transition:
+        transform 0.22s ease,
+        background 0.22s ease,
+        color 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+    }
+
+    .work-links .mini-link::after,
+    .work-links button.mini-link::after {
+      content: none;
+    }
+
+    .work-links .mini-link:hover,
+    .work-links button.mini-link:hover {
+      transform: translateY(-2px);
+      opacity: 1;
+      background: var(--samsung-blue);
+      border-color: var(--samsung-blue);
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(20, 40, 160, 0.16);
+    }
+
+    .work-links .mini-link:focus-visible,
+    .work-links button.mini-link:focus-visible {
+      outline: 3px solid rgba(20, 40, 160, 0.22);
+      outline-offset: 2px;
+    }
+
+  
+    /* =========================================================
+       WORK GRID COLUMN FIX
+       데스크톱에서는 3열, 태블릿 2열, 모바일 1열로 복구
+       ========================================================= */
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    @media (max-width: 1200px) {
+      .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  
+    /* =========================================================
+       AI DETAIL LAYER
+       텍스트 추가 없이 AI 전문가처럼 보이게 하는 시각 디테일
+       - subtle neural grid
+       - generative scan
+       - AI workflow node system
+       - premium Samsung-tech motion
+       ========================================================= */
+
+    @keyframes aiGridDrift {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 46px 46px, -46px 46px; }
+    }
+
+    @keyframes aiPulse {
+      0%, 100% {
+        opacity: 0.42;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.78;
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes aiScan {
+      0% { transform: translateX(-120%); opacity: 0; }
+      18% { opacity: 0.45; }
+      48% { opacity: 0.16; }
+      100% { transform: translateX(140%); opacity: 0; }
+    }
+
+    @keyframes aiFloat {
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(0, -8px, 0); }
+    }
+
+    @keyframes aiLineFlow {
+      0% { transform: translateX(-100%); opacity: 0; }
+      22% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 62px 0 0 0;
+      z-index: -2;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(20, 40, 160, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 40, 160, 0.055) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: radial-gradient(circle at 78% 26%, black 0%, rgba(0,0,0,.78) 28%, transparent 62%);
+      animation: aiGridDrift 18s linear infinite;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 540px;
+      height: 540px;
+      right: -160px;
+      top: 84px;
+      z-index: -1;
+      border-radius: 50%;
+      pointer-events: none;
+      background:
+        radial-gradient(circle, rgba(20, 40, 160, 0.14) 0%, rgba(20, 40, 160, 0.06) 38%, transparent 68%);
+      filter: blur(4px);
+      animation: aiPulse 6.5s ease-in-out infinite;
+    }
+
+    .hero-copy-wrap,
+    .hero-panel {
+      position: relative;
+    }
+
+    .hero-copy-wrap::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      top: 34px;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      border: 1px solid rgba(20, 40, 160, 0.12);
+      background:
+        radial-gradient(circle at center, rgba(20,40,160,0.12) 0 3px, transparent 4px),
+        conic-gradient(from 120deg, rgba(20,40,160,0.0), rgba(20,40,160,0.18), rgba(20,40,160,0.0));
+      opacity: 0.72;
+      pointer-events: none;
+      animation: aiFloat 7s ease-in-out infinite;
+    }
+
+    .hero-badge {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-badge::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 42%;
+      background: linear-gradient(90deg, transparent, rgba(20,40,160,.14), transparent);
+      animation: aiScan 5.8s ease-in-out infinite;
+    }
+
+    .blue-to-blue-card {
+      isolation: isolate;
+    }
+
+    .blue-to-blue-card .blue-card-top,
+    .blue-to-blue-card .blue-card-bottom {
+      position: relative;
+      z-index: 3;
+    }
+
+    .blue-to-blue-card::after {
+      opacity: 0.31;
+    }
+
+    .blue-to-blue-card::before {
+      z-index: 1;
+    }
+
+    .blue-to-blue-card .blue-card-top::after {
+      content: "";
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      width: 128px;
+      height: 128px;
+      opacity: 0.52;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.55) 0 3px, transparent 4px),
+        radial-gradient(circle at 18% 28%, rgba(255,255,255,.34) 0 2px, transparent 3px),
+        radial-gradient(circle at 82% 22%, rgba(255,255,255,.32) 0 2px, transparent 3px),
+        radial-gradient(circle at 76% 76%, rgba(255,255,255,.28) 0 2px, transparent 3px),
+        linear-gradient(30deg, transparent 49%, rgba(255,255,255,.18) 50%, transparent 51%),
+        linear-gradient(118deg, transparent 49%, rgba(255,255,255,.16) 50%, transparent 51%);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 34px;
+      animation: aiPulse 5.4s ease-in-out infinite;
+    }
+
+    .company-logo-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .company-logo-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 36%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.26), transparent);
+      transform: translateX(-140%);
+      animation: aiScan 7.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .flow-arrow {
+      position: relative;
+    }
+
+    .flow-arrow::before,
+    .flow-arrow::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 24px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.72), transparent);
+      transform: translateY(-50%);
+      opacity: .7;
+    }
+
+    .flow-arrow::before {
+      right: calc(100% + 4px);
+    }
+
+    .flow-arrow::after {
+      left: calc(100% + 4px);
+    }
+
+    .meta-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .meta-card::before {
+      content: "";
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      opacity: 0.58;
+      background:
+        linear-gradient(rgba(20,40,160,.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20,40,160,.18) 1px, transparent 1px);
+      background-size: 9px 9px;
+      border: 1px solid rgba(20, 40, 160, 0.13);
+      pointer-events: none;
+    }
+
+    .meta-card:nth-child(2)::before {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(20,40,160,.38) 0 2px, transparent 3px),
+        linear-gradient(rgba(20,40,160,.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20,40,160,.18) 1px, transparent 1px);
+      background-size: 100% 100%, 9px 9px, 9px 9px;
+      animation: aiPulse 4.8s ease-in-out infinite;
+    }
+
+    .work-card {
+      isolation: isolate;
+    }
+
+    .work-thumb {
+      position: relative;
+    }
+
+    .work-thumb::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0;
+      background:
+        linear-gradient(90deg, transparent 0%, rgba(20,40,160,0.16) 48%, transparent 100%);
+      transform: translateX(-120%);
+    }
+
+    .work-thumb::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(20,40,160,.62), transparent);
+      opacity: 0;
+      transform: translateX(-100%);
+      pointer-events: none;
+    }
+
+    .work-card:hover .work-thumb::before {
+      opacity: 1;
+      animation: aiScan 1.8s ease-out;
+    }
+
+    .work-card:hover .work-thumb::after {
+      animation: aiLineFlow 1.25s ease-out;
+    }
+
+    .work-card[data-category*="ai"]::after {
+      content: "";
+      position: absolute;
+      right: 22px;
+      top: 22px;
+      z-index: 4;
+      width: 34px;
+      height: 34px;
+      border-radius: 13px;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,.95) 0 2px, transparent 3px),
+        linear-gradient(rgba(255,255,255,.32) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.32) 1px, transparent 1px),
+        rgba(20, 40, 160, 0.72);
+      background-size: 100% 100%, 8px 8px, 8px 8px, 100% 100%;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 22px rgba(20,40,160,.18);
+      pointer-events: none;
+    }
+
+    .workflow-step {
+      isolation: isolate;
+    }
+
+    .workflow-step::after {
+      box-shadow: 0 0 0 6px rgba(20,40,160,.075);
+    }
+
+    .workflow-step h3 {
+      position: relative;
+    }
+
+    .workflow-step h3::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -26px;
+      width: 86px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--samsung-blue), transparent);
+      opacity: 0.72;
+    }
+
+    .workflow-step h3::after {
+      content: "";
+      position: absolute;
+      left: 74px;
+      top: -30px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--samsung-blue);
+      box-shadow:
+        0 0 0 5px rgba(20,40,160,.09),
+        26px 12px 0 -2px rgba(20,40,160,.28),
+        46px -8px 0 -3px rgba(20,40,160,.22);
+      animation: aiPulse 4.6s ease-in-out infinite;
+    }
+
+    .qc-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .qc-item::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      width: 72px;
+      height: 72px;
+      opacity: 0.16;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(20,40,160,.46) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20,40,160,.46) 1px, transparent 1px);
+      background-size: 12px 12px;
+      mask-image: radial-gradient(circle, black 0%, transparent 72%);
+    }
+
+    .contact-card {
+      isolation: isolate;
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at 50% 18%, black 0%, transparent 58%);
+      animation: aiGridDrift 20s linear infinite;
+    }
+
+    .contact-card h2,
+    .contact-card p,
+    .contact-actions {
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero::before,
+      .hero::after,
+      .hero-copy-wrap::after,
+      .hero-badge::after,
+      .blue-to-blue-card .blue-card-top::after,
+      .company-logo-card::after,
+      .meta-card:nth-child(2)::before,
+      .workflow-step h3::after,
+      .contact-card::before {
+        animation: none !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-copy-wrap::after {
+        display: none;
+      }
+
+      .blue-to-blue-card .blue-card-top::after {
+        width: 92px;
+        height: 92px;
+        border-radius: 26px;
+      }
+    }
+
+  
+    /* =========================================================
+       META CARD CLEANUP
+       AD / AI / QC 정보 카드의 불필요한 그리드 장식 제거
+       ========================================================= */
+
+    .meta-card::before,
+    .meta-card:nth-child(2)::before {
+      content: none !important;
+      display: none !important;
+      animation: none !important;
+    }
+
+    .meta-card {
+      overflow: visible;
+    }
+
+  
+    /* =========================================================
+       HERO DECORATION CLEANUP
+       왼쪽 히어로 영역의 불필요한 원형 HUD 장식 제거
+       ========================================================= */
+
+    .hero-copy-wrap::after {
+      content: none !important;
+      display: none !important;
+      animation: none !important;
+    }
+
+  
+    /* =========================================================
+       DECORATION CLEANUP
+       불필요한 AI HUD / 노드 / 스캔 장식 제거
+       삼성 블루 톤, 3열 그리드, 버튼 쉐입, 히어로 높이 정렬은 유지
+       ========================================================= */
+
+    .hero::before,
+    .hero::after,
+    .hero-copy-wrap::after,
+    .hero-badge::after,
+    .blue-to-blue-card .blue-card-top::after,
+    .company-logo-card::after,
+    .flow-arrow::before,
+    .flow-arrow::after,
+    .meta-card::before,
+    .meta-card:nth-child(2)::before,
+    .work-thumb::before,
+    .work-thumb::after,
+    .work-card[data-category*="ai"]::after,
+    .workflow-step h3::before,
+    .workflow-step h3::after,
+    .qc-item::after,
+    .contact-card::before {
+      content: none !important;
+      display: none !important;
+      animation: none !important;
+    }
+
+    .hero {
+      overflow: visible;
+      isolation: auto;
+    }
+
+    .blue-to-blue-card,
+    .work-card,
+    .workflow-step,
+    .contact-card {
+      isolation: auto;
+    }
+
+    .company-logo-card,
+    .meta-card,
+    .qc-item {
+      overflow: hidden;
+    }
+
+    .work-card:hover .work-thumb::before,
+    .work-card:hover .work-thumb::after {
+      animation: none !important;
+    }
+
+  
+    /* =========================================================
+       QUOTE CARD TYPOGRAPHY FIX
+       "AI를 다루는 디자이너..." 문구의 크기/굵기/행간 완화
+       ========================================================= */
+
+    .quote-card blockquote {
+      max-width: 680px;
+      margin-top: 44px !important;
+      font-size: clamp(24px, 2.7vw, 38px) !important;
+      line-height: 1.34 !important;
+      letter-spacing: -0.026em !important;
+      font-weight: 650 !important;
+      word-break: keep-all;
+    }
+
+    .quote-card p {
+      margin-top: 18px !important;
+      font-size: 16px !important;
+      line-height: 1.72 !important;
+      letter-spacing: -0.01em !important;
+      font-weight: 400 !important;
+      color: rgba(255,255,255,0.80) !important;
+    }
+
+    .quote-card {
+      padding: 32px !important;
+    }
+
+    @media (max-width: 900px) {
+      .quote-card blockquote {
+        margin-top: 34px !important;
+        font-size: clamp(22px, 6vw, 30px) !important;
+        line-height: 1.38 !important;
+      }
+    }
+
+  
+    /* =========================================================
+       CONTACT POPUP
+       Contact 버튼 클릭 시 이메일 / 휴대폰 번호 팝업 노출
+       ========================================================= */
+
+    .contact-popup-trigger {
+      cursor: pointer;
+      border: 0;
+    }
+
+    .contact-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2100;
+      display: none;
+      place-items: center;
+      padding: 22px;
+      background: rgba(5, 8, 24, 0.62);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .contact-modal.is-open {
+      display: grid;
+    }
+
+    .contact-modal-card {
+      width: min(460px, 100%);
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      background: #ffffff;
+      border: 1px solid rgba(20, 40, 160, 0.12);
+      box-shadow: 0 34px 90px rgba(5, 8, 24, 0.28);
+      color: var(--text);
+    }
+
+    .contact-modal-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--samsung-blue), var(--samsung-blue-2));
+    }
+
+    .contact-modal-head {
+      padding: 30px 30px 18px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .contact-modal-title {
+      display: grid;
+      gap: 8px;
+    }
+
+    .contact-modal-kicker {
+      color: var(--samsung-blue);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 650;
+      letter-spacing: 0.01em;
+    }
+
+    .contact-modal-title h3 {
+      font-size: 26px;
+      line-height: 1.18;
+      letter-spacing: -0.034em;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .contact-modal-close {
+      flex: 0 0 auto;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--samsung-blue-soft);
+      color: var(--samsung-blue);
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .contact-modal-close:hover {
+      background: rgba(20, 40, 160, 0.14);
+      transform: translateY(-1px);
+    }
+
+    .contact-modal-body {
+      padding: 0 30px 30px;
+    }
+
+    .contact-modal-copy {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.68;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+    }
+
+    .contact-info-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-info-item {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--samsung-blue-pale);
+      border: 1px solid rgba(20, 40, 160, 0.10);
+    }
+
+    .contact-info-label {
+      color: var(--samsung-blue);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 650;
+      letter-spacing: -0.004em;
+    }
+
+    .contact-info-value {
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.3;
+      font-weight: 550;
+      letter-spacing: -0.012em;
+    }
+
+    .contact-info-value a {
+      color: inherit;
+    }
+
+    .contact-info-value a:hover {
+      color: var(--samsung-blue);
+    }
+
+    .contact-modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .contact-modal-action {
+      min-height: 38px;
+      padding: 0 15px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(20, 40, 160, 0.14);
+      background: #ffffff;
+      color: var(--samsung-blue);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -0.004em;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .contact-modal-action:hover {
+      background: var(--samsung-blue);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 560px) {
+      .contact-modal-card {
+        border-radius: 24px;
+      }
+
+      .contact-modal-head,
+      .contact-modal-body {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .contact-info-item {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="progressBar"></div>
+
+  <header class="site-header">
+    <a href="#top" class="brand-lockup" aria-label="Back to top">
+      <strong>SHIN SUNG HOON</strong>
+      <span>ART DIRECTOR × AI VISUAL WORKFLOW</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#profile">Profile</a>
+      <a href="#works">주요 작업</a>
+      <a href="#workflow">AI Workflow</a>
+      <a href="#qc">Production QC</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-btn" type="button" id="themeToggle" aria-label="Toggle theme">◐</button>
+      <button class="menu-btn" type="button" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="#profile">Profile</a>
+    <a href="#works">주요 작업</a>
+    <a href="#workflow">AI Workflow</a>
+    <a href="#qc">Production QC</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main id="top">
+    <section class="section hero">
+      <div class="section-inner hero-grid">
+        <div class="hero-copy-wrap reveal">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Art Director Portfolio
+          </div>
+
+          <h1 class="hero-title">
+            BLUE<br />
+            TO <span>BLUE</span>
+          </h1>
+
+          <p class="hero-copy">
+            브랜드 캠페인 전략을 시각화하고,<br />
+            AI 기반 비주얼 워크플로우로 가능성을 확장하는<br />
+            <strong>Art Director 신성훈입니다.</strong>
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#works">대표작 보기</a>
+            <a class="btn btn-secondary" href="#workflow">AI Workflow 보기</a>
+            <a class="btn btn-secondary" href="https://drive.google.com/uc?export=download&id=1oLgKtEKiqmN0Jxd_cu7OY7y07cdjqRQs">PDF 다운로드</a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-card">
+              <strong>AD</strong>
+              <span>브랜드 캠페인 컨셉 및 비주얼 디렉션</span>
+            </div>
+            <div class="meta-card">
+              <strong>AI</strong>
+              <span>이미지·영상 기반 콘셉트 시각화</span>
+            </div>
+            <div class="meta-card">
+              <strong>QC</strong>
+              <span>브랜드 가이드 기반 제작물 품질 검수</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal">
+          <div class="blue-to-blue-card">
+            <div class="blue-card-top">
+              <p>&gt; From AdQUA Interactive to Samsung Electronics</p>
+              <div class="career-flow">
+                <div class="company-logo-card">
+                  <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/CI_Black_BG_AdQUA%20interactive.png" alt="AdQUA Interactive logo" />
+                  <span>AdQUA Interactive</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="company-logo-card samsung-card">
+                  <img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/Samsung_Orig_Wordmark_WHITE_RGB.png" alt="Samsung logo" />
+                  <span>Samsung Electronics</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="blue-card-bottom">
+              <h2 class="blue-card-title">Brand<br />Visual<br />System</h2>
+              <p class="blue-card-caption">
+                브랜드의 방향을 세우고, AI로 가능성을 확장하며, 제작 과정의 완성도를 함께 관리합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="profile">
+      <div class="section-inner reveal">
+        <div class="section-kicker">Profile</div>
+        <h2 class="section-title">브랜드를 읽고, 비주얼로 설득하고, 완성도로 증명합니다.</h2>
+        <p class="section-desc">
+          광고 캠페인 중심의 아트디렉션 경험을 바탕으로 브랜드 아이덴티티, 디지털 콘텐츠,
+          AI 비주얼 워크플로우, 제작 완성도 관리 역량을 함께 정리했습니다.
+        </p>
+
+        <div class="profile-grid">
+          <article class="profile-card">
+            <h3>Core Fit</h3>
+            <ul class="profile-list">
+              <li><b>Position</b><span>Art Director / Global Marketing Visual Communication</span></li>
+              <li><b>Strength</b><span>브랜드 캠페인 컨셉 개발, 비주얼 톤앤매너 설계, 영상·디지털 콘텐츠 제작 경험</span></li>
+              <li><b>AI Skill</b><span>Midjourney, Higgsfield, Veo, Kling, Photoshop AI 등 AI 기반 이미지·영상 시각화</span></li>
+              <li><b>Production</b><span>브랜드 가이드 준수, 산출물 품질 검수, 매체별 베리에이션 관리</span></li>
+            </ul>
+          </article>
+
+          <article class="quote-card">
+            <h3>Positioning Statement</h3>
+            <blockquote>
+              AI를 다루는 디자이너를 넘어,<br />
+              AI의 방향을 설계하는<br />
+              Art Director.
+            </blockquote>
+            <p>
+              AI는 수많은 가능성을 빠르게 펼쳐주는 도구입니다. 저는 그 가능성 속에서 브랜드에 맞는 방향을 고르고,
+              최종 결과물의 완성도까지 정리하는 아트디렉터입니다.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="works">
+      <div class="section-inner">
+        <div class="reveal">
+          <div class="section-kicker">주요 작업</div>
+          <h2 class="section-title">주요 작업물을<br />소개해 드립니다.</h2>
+          <p class="section-desc">
+            브랜드 컨셉, 비주얼 디렉션, 영상 캠페인,
+            AI 기반 제작 역량이 잘 드러나는 작업을 중심으로 구성했습니다.
+          </p>
+        </div>
+
+        <div class="works-toolbar reveal">
+          <div class="filter-group" aria-label="Work filters">
+            <button class="filter-btn is-active" type="button" data-filter="all">전체</button>
+            <button class="filter-btn" type="button" data-filter="ai">AI</button>
+            <button class="filter-btn" type="button" data-filter="lifestyle">라이프스타일</button>
+            <button class="filter-btn" type="button" data-filter="fnb">F&B</button>
+            <button class="filter-btn" type="button" data-filter="beauty">뷰티</button>
+            <button class="filter-btn" type="button" data-filter="etc">기타</button>
+          </div>
+          <input class="search-box" id="workSearch" type="search" placeholder="작업 검색" />
+        </div>
+
+        <div class="work-grid" id="workGrid">
+          <article class="work-card reveal" data-category="lifestyle ai" data-title="daedamo campaign 대다모">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/6.jpg" alt="DAEDAMO campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">라이프스타일</span><span class="tag">AI</span></div>
+              <h3>대다모 캠페인</h3>
+              <p>대다모가 가진 문제의식을 캠페인 메시지와 영상 콘텐츠로 확장한 라이프스타일 캠페인.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=ry7HVj5LCIc" target="_blank" rel="noopener">영상 1</a>
+                <a class="mini-link" href="https://www.youtube.com/watch?v=X8Br4d-IzSk" target="_blank" rel="noopener">영상 2</a>
+                <a class="mini-link" href="#workflow">AI Contents</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="lifestyle ai" data-title="hairism 헤어리즘">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/8.jpg" alt="HAIRism campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">라이프스타일</span><span class="tag">AI</span></div>
+              <h3>헤어리즘</h3>
+              <p>제품 아이디어와 상황 인사이트, 캠페인 메시지를 하나의 브랜드 경험으로 연결한 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=GDVkB8L-d3A" target="_blank" rel="noopener">영상 보기</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="lifestyle ai" data-title="blue abc day">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/9.jpg" alt="Blue ABC Day campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">라이프스타일</span><span class="tag">AI</span></div>
+              <h3>블루 ABC 데이</h3>
+              <p>브랜드 컬러와 캠페인 무드를 중심으로 영상 톤앤매너를 구축한 디지털 캠페인.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?si=exzTeKqGgaFrlJoL&v=hvTQfvWBehY" target="_blank" rel="noopener">영상 보기</a>
+                <button class="mini-link kv-link" type="button" data-modal-title="블루 ABC 데이 KV" data-modal-img="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/9.jpg">KV 보기</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="lifestyle" data-title="black abc day">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/11.jpg" alt="Black ABC Day campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">라이프스타일</span></div>
+              <h3>블랙 ABC 데이</h3>
+              <p>같은 캠페인 구조 안에서 컬러와 분위기를 달리해 브랜드 경험을 확장한 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=vfh5X2mjWWI" target="_blank" rel="noopener">영상 보기</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="lifestyle" data-title="u+ foldable7 launch">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/12.jpg" alt="U+ Foldable7 launch campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">라이프스타일</span></div>
+              <h3>U+ 폴더블7 런칭</h3>
+              <p>디바이스 런칭 캠페인에 맞춰 메시지, 영상, 디지털 접점을 설계한 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=CpGVzs3c0_s" target="_blank" rel="noopener">영상 보기</a>
+                <button class="mini-link kv-link" type="button" data-modal-title="U+ 폴더블7 KV" data-modal-img="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/12.jpg">KV 보기</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="lifestyle" data-title="tmoneygo performance 티머니고">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/14.jpg" alt="TmoneyGO performance campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">라이프스타일</span></div>
+              <h3>티머니GO 퍼포먼스</h3>
+              <p>서비스 이용 맥락을 중심으로 디지털 퍼포먼스 영상의 메시지와 흐름을 구성한 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=hgRz4gRuo-A" target="_blank" rel="noopener">영상 보기</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="fnb" data-title="subway jambon collection 써브웨이 잠봉">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/16.jpg" alt="Subway Jambon Collection portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">F&B</span></div>
+              <h3>써브웨이 잠봉 컬렉션</h3>
+              <p>신제품의 신선함과 브랜드 톤을 연결한 F&B 캠페인 비주얼 디렉션.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=2Tuys3QTjM4" target="_blank" rel="noopener">영상 보기</a>
+                <button class="mini-link kv-link" type="button" data-modal-title="써브웨이 잠봉 컬렉션 KV" data-modal-img="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/16.jpg">KV 보기</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="fnb" data-title="subway subpick 써브웨이 섭픽">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/18.jpg" alt="Subway Subpick campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">F&B</span></div>
+              <h3>써브웨이 섭픽</h3>
+              <p>써브웨이의 선택 경험을 캠페인 아이디어로 전환해, 브랜드 접점에서 직관적으로 전달한 영상 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?embeds_referring_euri=https%3A%2F%2Fwww.adqua.co.kr%2F&source_ve_path=Mjg2NjY&time_continue=1&v=-1eeVl8ObE0" target="_blank" rel="noopener">영상 1</a>
+                <a class="mini-link" href="https://www.youtube.com/watch?v=QP6ELEB0uE0" target="_blank" rel="noopener">영상 2</a>
+                <button class="mini-link kv-link" type="button" data-modal-title="써브웨이 섭픽 KV" data-modal-img="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/18.jpg">KV 보기</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="fnb" data-title="subway 60th film">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/21.jpg" alt="Subway 60th anniversary film portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">F&B</span></div>
+              <h3>써브웨이 60주년 필름</h3>
+              <p>브랜드 히스토리와 오늘의 Fresh 무드를 연결한 애니버서리 브랜드 필름.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=cg0ThFWKDo" target="_blank" rel="noopener">영상 보기</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="fnb" data-title="sase campaign 사세">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/22.jpg" alt="SASE campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">F&B</span></div>
+              <h3>사세 캠페인</h3>
+              <p>제품의 맛과 사용 상황을 영상 메시지로 풀어낸 F&B 캠페인 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=0y4KNDF37w" target="_blank" rel="noopener">영상 1</a>
+                <a class="mini-link" href="https://youtu.be/AC0HPnHLWw" target="_blank" rel="noopener">영상 2</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="fnb" data-title="haru vegetable 하루야채">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/23.jpg" alt="Haru Vegetable campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">F&B</span></div>
+              <h3>하루야채</h3>
+              <p>일상 속 건강 루틴을 브랜드 메시지로 전환한 F&B·헬스케어 영상 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=p06D-1Kx0uA" target="_blank" rel="noopener">영상 보기</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="beauty" data-title="dermafirm campaign 더마펌">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/25.jpg" alt="Dermafirm campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">뷰티</span></div>
+              <h3>더마펌 캠페인</h3>
+              <p>제품 효능, 브랜드 감도, 모델 이미지를 균형 있게 전달한 뷰티 캠페인 영상 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://youtu.be/uTpSkK_W9Qs" target="_blank" rel="noopener">영상 1</a>
+                <a class="mini-link" href="https://youtu.be/AuxWlMI0m4" target="_blank" rel="noopener">영상 2</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="beauty" data-title="kahi campaign 가히">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/26.jpg" alt="KAHI campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">뷰티</span></div>
+              <h3>가히 캠페인</h3>
+              <p>브랜드 이미지와 제품 사용 장면을 시리즈형 영상으로 풀어낸 뷰티 캠페인 작업.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://tvcf.co.kr/YCF/View_pop.asp?Code=A000530715" target="_blank" rel="noopener">영상 1</a>
+                <a class="mini-link" href="https://tvcf.co.kr/YCF/View_pop.asp?Code=A000530714" target="_blank" rel="noopener">영상 2</a>
+                <a class="mini-link" href="https://tvcf.co.kr/YCF/View_pop.asp?Code=A000530713" target="_blank" rel="noopener">영상 3</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="beauty" data-title="plant collagen 플랜트콜라겐">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/27.jpg" alt="Plant Collagen campaign portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">뷰티</span></div>
+              <h3>플랜트 콜라겐</h3>
+              <p>뷰티·헬스케어 제품의 이미지와 효능 메시지를 감각적으로 정리한 영상 캠페인.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://www.youtube.com/watch?v=efKE_YT6hM" target="_blank" rel="noopener">영상 1</a>
+                <a class="mini-link" href="https://www.youtube.com/watch?v=GsU7NtayUew" target="_blank" rel="noopener">영상 2</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="etc" data-title="etc tvcf works">
+            <div class="work-thumb"><img src="https://raw.githubusercontent.com/huni2092-jpg/portfolio-images/main/28.jpg" alt="Etc TVCF portfolio page" /></div>
+            <div class="work-info">
+              <div class="work-tags"><span class="tag">기타</span></div>
+              <h3>기타 TVCF 작업</h3>
+              <p>기타 TVCF 및 영상 작업을 모아볼 수 있는 아카이브형 작업 모음.</p>
+              <div class="work-links">
+                <a class="mini-link" href="https://star.tvcf.co.kr/L0223162FCD/shots" target="_blank" rel="noopener">작업 보기</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="section-inner">
+        <div class="reveal">
+          <div class="section-kicker">AI Workflow</div>
+          <h2 class="section-title">
+            AI를 단순한 시안 툴이 아니라,<br />
+            브랜드 비주얼을 확장하는 시스템으로 활용합니다.
+          </h2>
+          <p class="section-desc">
+            AI 기반 시각 콘셉트 제안부터 최종 산출물 정리까지,
+            실제 제작 흐름을 기준으로 정리했습니다.
+          </p>
+        </div>
+
+        <div class="workflow-grid">
+          <article class="workflow-step reveal">
+            <h3>Brief Understanding</h3>
+            <p>브랜드 목표, 캠페인 메시지, 타깃, 매체 조건을 먼저 해석합니다.</p>
+          </article>
+          <article class="workflow-step reveal">
+            <h3>Visual Direction</h3>
+            <p>키비주얼 톤, 컬러, 구도, 레퍼런스, 피해야 할 요소를 방향성으로 정리합니다.</p>
+          </article>
+          <article class="workflow-step reveal">
+            <h3>AI Exploration</h3>
+            <p>Midjourney, Higgsfield, Veo, Kling 등으로 이미지·영상 후보를 빠르게 확장합니다.</p>
+          </article>
+          <article class="workflow-step reveal">
+            <h3>Human Art Direction</h3>
+            <p>AI 결과물 중 브랜드핏, 완성도, 메시지 전달력을 기준으로 선별하고 다듬습니다.</p>
+          </article>
+          <article class="workflow-step reveal">
+            <h3>Finalization</h3>
+            <p>Photoshop, Illustrator, 후반 작업 툴로 로고, 레이아웃, 질감, 해상도를 정리합니다.</p>
+          </article>
+          <article class="workflow-step reveal">
+            <h3>Production QC</h3>
+            <p>브랜드 가이드, 사용성, 매체별 규격, 톤앤매너를 최종 검수합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="qc">
+      <div class="section-inner">
+        <div class="reveal">
+          <div class="section-kicker">Production QC</div>
+          <h2 class="section-title">좋은 시안보다 중요한 건, 끝까지 브랜드답게 완성하는 것.</h2>
+        </div>
+
+        <div class="qc-board reveal">
+          <div>
+            <h3>From Creative Concept<br />to Brand-Safe Output.</h3>
+            <p>
+              AI 기반 제작 환경에서는 결과물이 빠르게 늘어나는 만큼, 무엇을 선택하고 무엇을 덜어낼지 판단하는 QC 역량이 중요합니다.
+              저는 캠페인 목적, 브랜드 비주얼 가이드, 매체별 제작 조건을 기준으로 완성도를 관리합니다.
+            </p>
+          </div>
+
+          <div class="qc-list">
+            <div class="qc-item">
+              <div class="qc-icon">✓</div>
+              <div><strong>Brand Guide Check</strong><span>로고, 컬러, 타이포그래피, 이미지 톤, 브랜드 에셋 사용 기준 검수</span></div>
+            </div>
+            <div class="qc-item">
+              <div class="qc-icon">✓</div>
+              <div><strong>AI Artifact Check</strong><span>손, 얼굴, 제품 왜곡, 텍스트 오류, 비현실적 질감 등 AI 결과물 오류 확인</span></div>
+            </div>
+            <div class="qc-item">
+              <div class="qc-icon">✓</div>
+              <div><strong>Channel Adaptation</strong><span>OOH, SNS, 영상, 배너 등 매체별 비율과 정보 우선순위 정리</span></div>
+            </div>
+            <div class="qc-item">
+              <div class="qc-icon">✓</div>
+              <div><strong>Final Delivery</strong><span>제작사, 디자이너, 마케터가 바로 사용할 수 있는 최종 산출물 기준 관리</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-inner">
+        <div class="contact-card reveal">
+          <h2>Ready for<br />the Next Brand.</h2>
+          <p>
+            PDF 포트폴리오와 웹 포트폴리오를 함께 준비했습니다.
+            필요 시 전체 작업물, AI 프롬프트 샘플, 제작 QC 체크리스트도 추가로 공유드릴 수 있습니다.
+          </p>
+          <div class="contact-actions">
+            <button class="btn contact-popup-trigger" type="button">Contact</button>
+            <a class="btn" href="https://drive.google.com/uc?export=download&id=1oLgKtEKiqmN0Jxd_cu7OY7y07cdjqRQs">PDF Portfolio</a>
+            <a class="btn" href="#works">주요 작업</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2026 Shin Sung Hoon. Art Director Portfolio.
+  </footer>
+
+  
+  <div class="contact-modal" id="contactModal" aria-hidden="true">
+    <div class="contact-modal-card" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+      <div class="contact-modal-head">
+        <div class="contact-modal-title">
+          <div class="contact-modal-kicker">Contact Point</div>
+          <h3 id="contactModalTitle">작업 관련 문의는 아래 연락처로 부탁드립니다.</h3>
+        </div>
+        <button class="contact-modal-close" type="button" id="contactModalClose" aria-label="Close contact popup">×</button>
+      </div>
+
+      <div class="contact-modal-body">
+        <p class="contact-modal-copy">
+          포트폴리오 검토, 인터뷰, 추가 자료 요청 모두 편하게 연락 주세요.
+        </p>
+
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-info-label">E-mail</div>
+            <div class="contact-info-value">
+              <a href="mailto:li0224il@naver.com">li0224il@naver.com</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-label">Mobile</div>
+            <div class="contact-info-value">
+              <a href="tel:01039492421">010-3949-2421</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-modal-actions">
+          <a class="contact-modal-action" href="mailto:li0224il@naver.com">메일 보내기</a>
+          <a class="contact-modal-action" href="tel:01039492421">전화 연결</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal" id="imageModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <strong id="modalTitle">KV Preview</strong>
+        <button class="modal-close" type="button" id="modalClose" aria-label="Close modal">×</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="KV preview" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const progressBar = document.getElementById('progressBar');
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    });
+
+    menuToggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('is-open');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileNav.classList.remove('is-open'));
+    });
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = height > 0 ? (scrollTop / height) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = Array.from(document.querySelectorAll('.work-card'));
+    const searchBox = document.getElementById('workSearch');
+    let activeFilter = 'all';
+
+    function applyFilters() {
+      const keyword = searchBox.value.trim().toLowerCase();
+
+      cards.forEach(card => {
+        const categories = card.dataset.category || '';
+        const title = card.dataset.title || '';
+        const matchFilter = activeFilter === 'all' || categories.includes(activeFilter);
+        const matchSearch = !keyword || title.includes(keyword);
+        card.style.display = matchFilter && matchSearch ? '' : 'none';
+      });
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(item => item.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        activeFilter = btn.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    searchBox.addEventListener('input', applyFilters);
+
+    const modal = document.getElementById('imageModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+
+    document.querySelectorAll('[data-modal-img]').forEach(button => {
+      button.addEventListener('click', () => {
+        modalTitle.textContent = button.dataset.modalTitle || 'KV Preview';
+        modalImage.src = button.dataset.modalImg;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImage.src = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  
+    const contactModal = document.getElementById('contactModal');
+    const contactModalClose = document.getElementById('contactModalClose');
+    const contactTriggers = document.querySelectorAll('.contact-popup-trigger');
+
+    function openContactModal() {
+      contactModal.classList.add('is-open');
+      contactModal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeContactModal() {
+      contactModal.classList.remove('is-open');
+      contactModal.setAttribute('aria-hidden', 'true');
+    }
+
+    contactTriggers.forEach(button => {
+      button.addEventListener('click', openContactModal);
+    });
+
+    contactModalClose.addEventListener('click', closeContactModal);
+
+    contactModal.addEventListener('click', (event) => {
+      if (event.target === contactModal) closeContactModal();
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && contactModal.classList.contains('is-open')) {
+        closeContactModal();
+      }
+    });
+
+  </script>
+</body>
+</html>
